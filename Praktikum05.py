@@ -8,20 +8,27 @@ while True :
     if A.lower() == 'q' :
         break
     elif A.lower() == 'l' :
-        print ("List Data Nilai")
-        print ()
-        print ("                     DAFTAR NILAI MAHASISWA                       ")
-        print ("==================================================================")
-        print ("| NO |     NAMA    |    NIM    | TUGAS | UTS | UAS | NILAI AKHIR |")
-        print ("==================================================================")
-        i = 0
-        for x in Data.items() :
-            i+= 1
-            print ("| {6:2} |  {0:10s} | {1:9} | {2:5d} | {3:3d} | {4:3d} |{5:12.2f} |"\
-                   .format (x[0], x[1][0], x[1][1], x[1][2], x[1][3], x[1][4], i))
+        if Data != {}  :
+            print ()
+            print ("                     DAFTAR NILAI MAHASISWA                       ")
             print ("==================================================================")
+            print ("| NO |     NAMA    |    NIM    | TUGAS | UTS | UAS | NILAI AKHIR |")
+            print ("==================================================================")
+            i = 0
+            for x in Data.items() :
+                i+= 1
+                print ("| {6:2} |  {0:10s} | {1:9} | {2:5d} | {3:3d} | {4:3d} |{5:12.2f} |"\
+                       .format (x[0], x[1][0], x[1][1], x[1][2], x[1][3], x[1][4], i))
+                print ("==================================================================")
         else :
+            print ("                     DAFTAR NILAI MAHASISWA                       ")
+            print ("==================================================================")
+            print ("| NO |     NAMA    |    NIM    | TUGAS | UTS | UAS | NILAI AKHIR |")
+            print ("==================================================================")
             print ("|                   TIDAK ADA DATA MAHASISWA                     |")
+            print ("==================================================================")
+
+        
                    
     elif A.lower () == 'a' :
         print (" TAMBAHKAN DATA ")
@@ -48,10 +55,12 @@ while True :
         print (" Search Data ")
         NAMA = input (" Masukkan Nama        : ")
         if NAMA in Data.keys() :
-            print ("==================================================================")
+            print ("=============================================================")
+            print ("|     NAMA    |    NIM    | TUGAS | UTS | UAS | NILAI AKHIR |")
+            print ("=============================================================")
             print ("|  {0:10s} | {1:9} | {2:5d} | {3:3d} | {4:3d} |{5:12.2f} |"\
                    .format(NAMA, NIM, TUGAS, UTS, UAS, AKHIR))
-            print ("==================================================================")
+            print ("=============================================================")
         else :
             print(" DATA {0} TIDAK ADA ".format(NAMA))
     
